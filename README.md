@@ -54,7 +54,7 @@ Whether the language will be a white-space language or whether it will use some 
 
 (133 non-whitespace characters)
 
-Instead C#:
+Instead of C#:
 
     if (a == 10) {
         if (b == 20) {
