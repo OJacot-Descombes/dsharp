@@ -40,7 +40,7 @@ Instead of long explanations, here an idea of how D# could look:
 
 In [Roslyn issue #13731](https://github.com/dotnet/roslyn/issues/13731#issuecomment-246209933) you can see the corresponding C# code.
 
-Whether the language will be a white-space language or whether it will use some end-symbol for code blocks has yet to be discussed. While experimenting with different end-symbols, I realized that they don't really add information. Is it helpful to see 7 end-braces at the end of a C#-listing? I tried "L" as end-symbol because it looks like a left-lower corner.
+Whether the language will be a white-space language or whether it will use some end-symbol for code blocks has yet to be discussed. While experimenting with different end-symbols, I realized that they don't really add information. Is it helpful to see 7 end-braces at the end of a C#-listing?
 
     if a == 10
         if b == 20
@@ -49,5 +49,21 @@ Whether the language will be a white-space language or whether it will use some 
             WriteLine("Value of a is 10 and b greater than 50")
         else
             WriteLine("Value of a is 10")
-        L
-    L
+        end
+    end
+
+(133 non-whitespace characters)
+
+Instead C#:
+
+    if (a == 10) {
+        if (b == 20) {
+            WriteLine("Value of a is 10 and b is 20");
+        } else if (b > 50) {
+            WriteLine("Value of a is 10 and b greater than 50");
+        } else {
+            WriteLine("Value of a is 10");
+        }
+    }
+
+(145 non-whitespace characters)
